@@ -3,6 +3,8 @@ import { Geist_Mono, Raleway } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -28,7 +30,19 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <header className="flex h-16 items-center gap-2 bg-secondary px-4">
+            <nav className="flex">
+              <Button asChild variant="ghost">
+                <Link href="/">Book listings</Link>
+              </Button>
+              <Button asChild variant="ghost">
+                <Link href="/add-book">Add book</Link>
+              </Button>
+            </nav>
+          </header>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
