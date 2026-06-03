@@ -1,6 +1,8 @@
 import { BookCard } from "@/components/book-card"
+import { Button } from "@/components/ui/button"
 import { Book } from "@/lib/generated/prisma/client"
 import prisma from "@/lib/prisma"
+import Link from "next/link"
 
 const mockBooks: Book[] = [
   {
@@ -42,18 +44,22 @@ const mockBooks: Book[] = [
 ]
 
 export default async function Page() {
-  // const books = await prisma.book.findMany()
+  // const books = await prisma.book.findMany({
+  //   orderBy: {published: "desc"}
+  // })
   const books = mockBooks
 
   return (
-    <div className="flex min-h-svh p-6">
+    <div className="relative flex p-6">
       <div className="w-full max-w-7xl">
         <h1 className="mb-6 text-3xl font-semibold">Book listings</h1>
-
         <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {books.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
+          <Button asChild className="col-span-full mt-6">
+            <Link href="#">Add book to library</Link>
+          </Button>
         </div>
       </div>
     </div>
