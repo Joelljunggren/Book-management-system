@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         <h1 className="text-3xl font-semibold">Book listings</h1>
       </div>
     </div>
