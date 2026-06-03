@@ -9,6 +9,7 @@ import {
 } from "./ui/card"
 import { Button } from "./ui/button"
 import Link from "next/link"
+import { BookText } from "lucide-react"
 
 type Props = {
   book: Book
@@ -34,7 +35,10 @@ function BookCard({ book }: Props) {
       </CardDescription>
       <CardFooter>
         <Button asChild className="w-full">
-          <Link href="#">View Book</Link>
+          <Link href="#">
+            View Book
+            <BookText />
+          </Link>
         </Button>
       </CardFooter>
     </Card>

@@ -2,6 +2,7 @@ import { BookCard } from "@/components/book-card"
 import { Button } from "@/components/ui/button"
 import { Book } from "@/lib/generated/prisma/client"
 import prisma from "@/lib/prisma"
+import { BookPlus } from "lucide-react"
 import Link from "next/link"
 
 const mockBooks: Book[] = [
@@ -58,7 +59,10 @@ export default async function Page() {
             <BookCard key={book.id} book={book} />
           ))}
           <Button asChild className="col-span-full mt-6">
-            <Link href="#">Add book to library</Link>
+            <Link href="/add-book">
+              Add another book to library
+              <BookPlus />
+            </Link>
           </Button>
         </div>
       </div>
