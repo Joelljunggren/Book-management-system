@@ -9,7 +9,7 @@ import {
 } from "./ui/card"
 import { Button } from "./ui/button"
 import Link from "next/link"
-import { BookText } from "lucide-react"
+import { BookDashed, BookText } from "lucide-react"
 
 type Props = {
   book: Book
@@ -33,13 +33,21 @@ function BookCard({ book }: Props) {
       <CardDescription>
         Created at: {book.createdAt.toLocaleDateString()}
       </CardDescription>
-      <CardFooter>
-        <Button asChild className="w-full">
-          <Link href="#">
-            View Book
-            <BookText />
-          </Link>
-        </Button>
+      <CardFooter className="m-auto">
+        <div className="flex gap-2">
+          <Button asChild className="">
+            <Link href={`/${book.id}`}>
+              View Book
+              <BookText />
+            </Link>
+          </Button>
+          <Button asChild className="">
+            <Link href="#">
+              Edit Book
+              <BookDashed />
+            </Link>
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   )
