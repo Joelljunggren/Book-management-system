@@ -31,7 +31,7 @@ function BookCard({ book }: Props) {
         <p>ISBN: {book.isbn}</p>
       </CardContent>
       <CardDescription>
-        Created at: {book.createdAt.toLocaleDateString()}
+        Uploaded at: {book.createdAt.toLocaleDateString()}
       </CardDescription>
       <CardFooter className="m-auto">
         <div className="flex gap-2">

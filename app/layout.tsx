@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Toaster } from "@/components/ui/sonner"
+import { List } from "lucide-react"
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -33,12 +34,18 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <header className="flex h-16 items-center gap-2 bg-secondary px-4">
-            <nav className="flex">
+            <nav className="flex w-full items-center gap-2">
               <Button asChild variant="ghost">
                 <Link href="/">Book listings</Link>
               </Button>
               <Button asChild variant="ghost">
                 <Link href="/books/create">Add book</Link>
+              </Button>
+              <Button asChild variant="ghost" className="ml-auto">
+                <Link href="/list">
+                  View books in table
+                  <List />
+                </Link>
               </Button>
             </nav>
           </header>
