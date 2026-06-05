@@ -36,7 +36,7 @@ function BookCard({ book }: Props) {
       <CardFooter className="m-auto">
         <div className="flex gap-2">
           <Button asChild className="">
-            <Link href={`/${book.id}`}>
+            <Link href={`books/${book.id}`}>
               View Book
               <BookText />
             </Link>
