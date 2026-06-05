@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookAlert, BookDashed } from "lucide-react"
+import { DeleteBookButton } from "./_components/delete-book-button"
 
 async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
   const params = await props.params
@@ -42,18 +43,25 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        <Button asChild className="" variant="destructive">
+        {/* <Button asChild className="" variant="destructive">
           <Link href="#">
             Delete book
             <BookAlert />
           </Link>
-        </Button>
+        </Button> */}
         <Button asChild className="">
           <Link href="#">
             Edit Book
             <BookDashed />
           </Link>
         </Button>
+        <DeleteBookButton
+          action={async () => {
+            "use server"
+
+            await prisma.book.delete({ where: { id: book.id } })
+          }}
+        />
       </div>
     </div>
   )
