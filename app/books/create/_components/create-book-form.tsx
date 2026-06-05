@@ -11,6 +11,8 @@ import {
 import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { createBook } from "../_actions/book-actions"
+import { BookPlus } from "lucide-react"
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -32,8 +34,9 @@ function CreateBookForm() {
     validators: {
       onSubmit: formSchema,
     },
-    onSubmit: ({ value }) => {
+    onSubmit: async ({ value }) => {
       console.log(value)
+      await createBook(value)
     },
   })
 
@@ -129,7 +132,10 @@ function CreateBookForm() {
         </form.Field>
 
         <Field orientation="horizontal">
-          <Button type="submit">Add book</Button>
+          <Button type="submit">
+            Add book
+            <BookPlus />
+          </Button>
         </Field>
       </FieldGroup>
     </form>
