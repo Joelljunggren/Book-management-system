@@ -59,7 +59,7 @@ export default async function Page() {
             <BookCard key={book.id} book={book} />
           ))}
           <Button asChild className="col-span-full mt-6">
-            <Link href="/add-book">
+            <Link href="/books/create">
               Add another book to library
               <BookPlus />
             </Link>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookAlert, BookDashed } from "lucide-react"
 
-async function BookDetailsPage(props: PageProps<"/[bookId]">) {
+async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
   const params = await props.params
 
   if (!params.bookId) notFound()

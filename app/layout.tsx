@@ -37,7 +37,7 @@ export default function RootLayout({
                 <Link href="/">Book listings</Link>
               </Button>
               <Button asChild variant="ghost">
-                <Link href="/add-book">Add book</Link>
+                <Link href="/books/create">Add book</Link>
               </Button>
             </nav>
           </header>
