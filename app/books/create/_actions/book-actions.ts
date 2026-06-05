@@ -6,7 +6,13 @@ import { z } from "zod"
 const createBookSchema = z.object({
   title: z.string().min(1, "Title is required"),
   author: z.string().min(1, "Author is required"),
-  isbn: z.string().min(10, "Valid ISBN is required"),
+  isbn: z
+    .string()
+    .min(1, "ISBN is required")
+    .transform((v) => v.replace(/[-\s]/g, ""))
+    .refine((v) => /^\d{13}$/.test(v), {
+      message: "ISBN must be a valid ISBN-13",
+    }),
   published: z.coerce.date().refine((d) => !isNaN(d.getTime()), {
     message: "Publishing date is required",
   }),

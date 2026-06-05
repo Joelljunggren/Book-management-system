@@ -1,9 +1,8 @@
 import prisma from "@/lib/prisma"
 import { notFound } from "next/navigation"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BookAlert, BookDashed } from "lucide-react"
+import { BookDashed } from "lucide-react"
 import { DeleteBookButton } from "./_components/delete-book-button"
 
 async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
@@ -43,12 +42,6 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        {/* <Button asChild className="" variant="destructive">
-          <Link href="#">
-            Delete book
-            <BookAlert />
-          </Link>
-        </Button> */}
         <Button asChild className="">
           <Link href="#">
             Edit Book
