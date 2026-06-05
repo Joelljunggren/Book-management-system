@@ -52,9 +52,9 @@ export default async function Page() {
 
   return (
     <div className="relative flex p-6">
-      <div className="w-full max-w-7xl">
+      <div className="mx-auto w-full max-w-7xl">
         <h1 className="mb-6 text-3xl font-semibold">Book listings</h1>
-        <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 lg:grid-cols-3">
           {books.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
