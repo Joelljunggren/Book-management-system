@@ -25,5 +25,6 @@ export async function createBook(values: unknown) {
     },
   })
 
-  redirect(`/books/${newBook.id}`)
+  return newBook
+  //   redirect(`/books/${newBook.id}`)
 }

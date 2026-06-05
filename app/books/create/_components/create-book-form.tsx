@@ -8,11 +8,12 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
-import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { createBook } from "../_actions/book-actions"
 import { BookPlus } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { toast } from "sonner"
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -22,7 +23,7 @@ const formSchema = z.object({
 })
 
 function CreateBookForm() {
-  //   const router = useRouter()
+  const router = useRouter()
 
   const form = useForm({
     defaultValues: {
@@ -36,7 +37,11 @@ function CreateBookForm() {
     },
     onSubmit: async ({ value }) => {
       console.log(value)
-      await createBook(value)
+      const newBook = await createBook(value)
+
+      toast.success(`Successfully added book: ${newBook.title}`)
+
+      router.push(`/books/${newBook.id}`)
     },
   })
 
