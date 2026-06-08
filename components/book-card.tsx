@@ -42,7 +42,7 @@ function BookCard({ book }: Props) {
             </Link>
           </Button>
           <Button asChild className="">
-            <Link href="#">
+            <Link href={`/books/${book.id}/edit`}>
               Edit Book
               <BookDashed />
             </Link>

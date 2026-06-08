@@ -9,7 +9,8 @@ export default async function ListViewPage() {
     <div className="mx-auto max-w-prose space-y-4 p-4">
       <h1 className="text-3xl font-semibold">Table of books</h1>
 
-      {/* {Create book table here} */}
+      {/* Add filtering for the book table */}
+      {/* Add a way to search for books */}
       <div>
         <BookTable books={books} />
       </div>

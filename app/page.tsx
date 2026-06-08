@@ -1,6 +1,6 @@
 import { BookCard } from "@/components/book-card"
 import { Button } from "@/components/ui/button"
-import { Book } from "@/lib/generated/prisma/client"
+// import { Book } from "@/lib/generated/prisma/client"
 import prisma from "@/lib/prisma"
 import { BookPlus } from "lucide-react"
 import Link from "next/link"

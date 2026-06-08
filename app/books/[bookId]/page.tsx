@@ -42,8 +42,9 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
         </div>
       </div>
       <div className="flex justify-center gap-4">
+        {/* Add functionality to edit */}
         <Button asChild className="">
-          <Link href="#">
+          <Link href={`/books/${book.id}/edit`}>
             Edit Book
             <BookDashed />
           </Link>

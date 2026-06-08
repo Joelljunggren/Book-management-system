@@ -1,6 +1,5 @@
 "use server"
 import prisma from "@/lib/prisma"
-import { redirect } from "next/navigation"
 import { z } from "zod"
 
 const createBookSchema = z.object({
@@ -32,5 +31,4 @@ export async function createBook(values: unknown) {
   })
 
   return newBook
-  //   redirect(`/books/${newBook.id}`)
 }
