@@ -17,6 +17,7 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
   if (!book) notFound()
 
   return (
+    // Should remake this entire thing into a card component instead
     <div className="mx-auto max-w-prose space-y-4 p-4">
       <h1 className="mb-10 text-2xl font-bold md:text-center">{book.title}</h1>
 
