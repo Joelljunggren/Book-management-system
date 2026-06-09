@@ -6,12 +6,11 @@ export default async function ListViewPage() {
     orderBy: { published: "desc" },
   })
   return (
-    <div className="mx-auto max-w-prose space-y-4 p-4">
-      <h1 className="text-3xl font-semibold">Table of books</h1>
-
-      {/* Add filtering for the book table */}
-      {/* Add a way to search for books */}
-      <div>
+    <div className="p-4 md:flex md:justify-center">
+      <div className="space-y-4">
+        <h1 className="text-center font-semibold md:text-2xl">
+          Books registered: {books.length}
+        </h1>
         <BookTable books={books} />
       </div>
     </div>

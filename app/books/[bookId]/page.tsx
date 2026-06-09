@@ -18,9 +18,11 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
 
   return (
     <div className="mx-auto max-w-prose space-y-4 p-4">
-      <h1 className="mb-10 text-center text-4xl font-bold">{book.title}</h1>
+      <h1 className="mb-10 text-center text-3xl font-bold md:text-2xl">
+        {book.title}
+      </h1>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2">
         <div className="mx-auto flex max-w-prose flex-col items-start justify-center space-y-4 md:mx-0">
           <p className="text-2xl">Author: {book.author}</p>
           <p className="text-2xl">ISBN: {book.isbn}</p>
@@ -31,8 +33,8 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
           <p>Updated: {book.updatedAt.toLocaleDateString()}</p>
         </div>
 
-        <div className="flex justify-center">
-          <div className="rounded-lg bg-muted">
+        <div className="flex justify-center md:justify-end">
+          <div className="rounded-lg">
             <img
               src="https://placehold.net/400x600.png"
               alt="Placeholder image"
@@ -42,7 +44,6 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        {/* Add functionality to edit */}
         <Button asChild className="">
           <Link href={`/books/${book.id}/edit`}>
             Edit Book

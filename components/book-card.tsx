@@ -21,7 +21,7 @@ function BookCard({ book }: Props) {
       <CardHeader className="p-0">
         <div className="bg-primary px-6 py-4 text-primary-foreground">
           <CardTitle className="m-0 p-0">
-            <h2 className="font-bold">{book.title}</h2>
+            <h2 className="line-clamp-1 font-bold">{book.title}</h2>
           </CardTitle>
         </div>
       </CardHeader>
