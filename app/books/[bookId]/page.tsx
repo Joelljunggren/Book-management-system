@@ -18,9 +18,7 @@ async function BookDetailsPage(props: PageProps<"/books/[bookId]">) {
 
   return (
     <div className="mx-auto max-w-prose space-y-4 p-4">
-      <h1 className="mb-10 text-center text-3xl font-bold md:text-2xl">
-        {book.title}
-      </h1>
+      <h1 className="mb-10 text-2xl font-bold md:text-center">{book.title}</h1>
 
       <div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2">
         <div className="mx-auto flex max-w-prose flex-col items-start justify-center space-y-4 md:mx-0">
